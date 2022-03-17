@@ -1,0 +1,6 @@
+package com.example.security.config;
+
+@Configuration
+public class AppSecurity {
+
+}
