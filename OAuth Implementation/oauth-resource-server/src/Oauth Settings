@@ -1,0 +1,84 @@
+This file is for the steps for implementing Authorization Server (Keycloak) and Resource Server
+------------------------------------------------------------------------------------------------------------------------
+
+Implementing Keycloak
+---------------------
+1. Goto keycloak bin directory and open cmd there
+    c:\keycloak\bin>
+
+
+    Realm is like tenant in a keycloak server. It is a space that allows us to manage a set of users, their roles and
+    their credentials.
+
+2. Using "Add realm" button create one realm
+3. From Manage section -> Users => Add new user
+4. After adding users open that particular user -> goto "Credentials" tab and add password for that user.
+5. After adding user goto http://localhost:8080/auth/realms/myfirstrealm/account and user credentials
+    of created user and sign in.
+
+
+-------------------------------------------
+Method - 1 (Authorization Code)
+-------------------------------------------
+
+
+    For receving authorization code our client app must be registered with Authorization server to get
+    client_id and client_secret eg.
+
+    Client (Postman), Authorization Server (Keycloak)
+
+    1. Goto KeyCloak admin console
+    2. Select our realm not master one.
+    3. From left hand side menu goto clients
+    4. After it opens clients page click on "create" top right corner and add/register our client app
+        in this case we are using Postman as our UI client.
+    5. After adding client id click on save and our client application will be created.
+
+    Note: By Default our created client "Access Type" will be public so we'll not see credentials page.
+        So change it to Confidentials and save than we'll see Credentials page and than we'll get
+        access token there.
+
+    - Standard Flow Enabled (By default enabled) = Authorization code.
+    - Direct Access Grant Enabled (By default enabled) = Password Grant.
+    - Valid redirect url: provide our url for displaying page after successfull login and logout
+        by default it will be KeyCloak url
+
+*** Authorization Code Flow (This code will help to access resource server) ***
+
+ GET: http://localhost:8080/auth/realms/myfirstrealm/protocol/openid-connect/auth
+
+ Http request params:
+
+    client_id:
+    response_type: code // Don't change
+    scope: openid profile
+    redirect_uri: http://localhost:8083/callback
+    state:
+
+provide all these param with GET request in postman url will we formatted.
+copy the url and open it in browser after successfull login we'll get the access code in url itself.
+
+Copy the access code from above url
+
+
+------------------------------------------------------------------
+- Now Accessing the resource-server
+------------------------------------------------------------------
+
+    POST: http://localhost:8080/auth/realms/myfirstrealm/protocol/openid-connect/token
+
+    Body: x-www-form-urlencoded
+
+    grant_type:authorization_code
+    client_id:
+    client_secret:
+    code:
+    redirect_uri:http://localhost:8083/callback
+    scope:openid profile
+
+    After this you will receive access_token
+
+    copy access_token and use in the headers section of resource-server url
+
+
+

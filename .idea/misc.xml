@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/jdbc-authentication/pom.xml" />
         <option value="$PROJECT_DIR$/inmemory-authentication/pom.xml" />
         <option value="$PROJECT_DIR$/jdbc-authentication-2/pom.xml" />
+        <option value="$PROJECT_DIR$/custom-authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/custom-authentication-2/pom.xml" />
+        <option value="$PROJECT_DIR$/custom-authentication-provider/pom.xml" />
       </list>
     </option>
   </component>

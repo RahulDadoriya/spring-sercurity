@@ -9,9 +9,15 @@
         <module name="jdbc-authentication" />
         <module name="jdbc-authentication-2" />
         <module name="inmemory-authentication" />
+        <module name="custom-authentication" />
+        <module name="custom-authentication-2" />
+        <module name="custom-authentication-provider" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="custom-authentication" target="1.8" />
+      <module name="custom-authentication-2" target="1.8" />
+      <module name="custom-authentication-provider" target="1.8" />
       <module name="inmemory-authentication" target="1.8" />
       <module name="jdbc-authentication" target="1.8" />
       <module name="jdbc-authentication (1)" target="1.8" />
@@ -20,6 +26,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="custom-authentication" options="-parameters" />
+      <module name="custom-authentication-2" options="-parameters" />
+      <module name="custom-authentication-provider" options="-parameters" />
       <module name="inmemory-authentication" options="-parameters" />
       <module name="jdbc-authentication" options="-parameters" />
       <module name="jdbc-authentication (1)" options="-parameters" />

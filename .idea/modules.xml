@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Spring Security.iml" filepath="$PROJECT_DIR$/.idea/Spring Security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-authentication/custom-authentication.iml" filepath="$PROJECT_DIR$/custom-authentication/custom-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-authentication-2/custom-authentication-2.iml" filepath="$PROJECT_DIR$/custom-authentication-2/custom-authentication-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/custom-authentication-provider/custom-authentication-provider.iml" filepath="$PROJECT_DIR$/custom-authentication-provider/custom-authentication-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/inmemory-authentication/inmemory-authentication.iml" filepath="$PROJECT_DIR$/inmemory-authentication/inmemory-authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-authentication/jdbc-authentication.iml" filepath="$PROJECT_DIR$/jdbc-authentication/jdbc-authentication.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-authentication-2/jdbc-authentication-2.iml" filepath="$PROJECT_DIR$/jdbc-authentication-2/jdbc-authentication-2.iml" />
